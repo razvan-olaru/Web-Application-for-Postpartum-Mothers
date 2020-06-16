@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<!-- This is the first page when opening the app without an account.
+It displays a form with 5 questions, and each field is mandatory.
+At the end, there is a submit button. -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HCI-Project</title>
+  <link rel="shortcut icon" href="https://material.io/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" href="bundle-app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+</head>
+
+<body>
+  <center>
+    <div class="containerr">
+      <div id="user-name" class="form-group">
+        <div class="field__input-containerr">
+          <input type="text" class="field__input" id="input-name" name="input-name" required value=""
+            autocomplete="off">
+          <label class="field__label" id="username-label" for="input-name"><span>Name</span></label>
+          <div class="field__decoration"></div>
+        </div>
+      </div>
+      <div id="user-child-name" class="form-group">
+        <div class="field__input-containerr">
+          <input type="text" class="field__input" id="input-child-name" name="input-child-name" required value=""
+            autocomplete="off">
+          <label class="field__label" id="username-label" for="input-child-name"><span>Child name</span></label>
+          <div class="field__decoration"></div>
+        </div>
+      </div>
+      <div id="user-quit-date" class="form-group">
+        <div class="field__input-containerr">
+          <input type="date" min="1950-01-01" onmouseover="getTodayDate(this)" class="field__input" id="input-quit-date"
+            name="input-quit-date" required value="" autocomplete="off">
+          <label class="field__label" id="username-label" for="input-quit-date"><span>When did you quit?
+              dd/mm/yyyy</span></label>
+          <div class="field__decoration"></div>
+        </div>
+      </div>
+      <div id="user-cigarettes" class="form-group">
+        <div class="field__input-containerr">
+          <input type="text" class="field__input" id="input-cigarettes" name="input-cigarettes" required value=""
+            autocomplete="off">
+          <label class="field__label" id="username-label" for="input-cigarettes"><span>How many cigarettes did you smoke
+              per day?</span></label>
+          <div class="field__decoration"></div>
+        </div>
+      </div>
+      <div id="user-cigarettes-price" class="form-group">
+        <div class="field__input-containerr">
+          <input type="text" class="field__input" id="input-cigarettes-price" name="input-cigarettes-price" required
+            value="" autocomplete="off">
+          <label class="field__label" id="username-label" for="input-cigarettes-price"><span>What was the price for a
+              packet?</span></label>
+          <div class="field__decoration"></div>
+        </div>
+      </div>
+    </div>
+  </center>
+
+  <button class="addcraving" onclick="completeIntro()">
+    <span>Done</span>
+  </button>
+
+  <script src="bundle-app.js" async></script>
+
+  <script>
+
+    // isNull checks whether a certain field received an input or not
+    function isNull(item) {
+      return !(typeof item !== 'undefined' && item !== null)
+    }
+
+    // Checks whether there exists data to be stored about the user
+    function dataExists() {
+      return !(
+        isNull(localStorage.getItem("name")) ||
+        isNull(localStorage.getItem("child-name")) ||
+        isNull(localStorage.getItem("quit-date")) ||
+        isNull(localStorage.getItem("cigarettes")) ||
+        isNull(localStorage.getItem("join-date")) ||
+        isNull(localStorage.getItem("data")) ||
+        isNull(localStorage.getItem("cigarettes_price")))
+    }
+
+    // Checks whether there exists at least one field which is not completed
+    function checkFields() {
+      var name = document.getElementById("input-name").value;
+      var child_name = document.getElementById("input-child-name").value
+      var quit_date = document.getElementById("input-quit-date").value
+      var cigarettes = document.getElementById("input-cigarettes").value
+      var cigarettes_price = document.getElementById("input-cigarettes-price").value
+
+      return !(name == "" || child_name == "" || quit_date == "" ||
+        cigarettes == "" || cigarettes_price == "")
+    }
+
+
+    var demo = {
+      'date': null, // date
+      'intensity': 7, // from 1-10
+      'feel': ['happy', 'lonely', 'sad'],
+      'activity': ['drinking', 'sex'],
+      'company': ['alone', 'family', 'friends'],
+      'comment': ''
+    }
+
+    /* It adds some information by default, which will be used
+       to visualize the Cravings Graph in the Health Timeline section */
+    function addSampleData() {
+      var data = JSON.parse(localStorage.getItem('data'))
+      for (i = 0; i < 100; i++) {
+        var day = new Date();
+        var rand = Math.floor(Math.random() * (7 - 1) + 1)
+        day.setDate(day.getDate() - rand)
+
+        var curDemo = Object.assign({}, demo)
+        curDemo['date'] = day
+
+        data['cravings'][i] = curDemo
+      }
+      localStorage.setItem('data', JSON.stringify(data))
+    }
+
+    /* This function checks whether the form is completed
+       If this happens, the app will store the user's details.
+       If not, a popup alert will apear, asking the user to complete
+       all fields. */
+    function completeIntro() {
+      var name = document.getElementById("input-name").value;
+      var child_name = document.getElementById("input-child-name").value
+      var quit_date = document.getElementById("input-quit-date").value
+      var cigarettes = document.getElementById("input-cigarettes").value
+      var cigarettes_price = document.getElementById("input-cigarettes-price").value
+
+      if (!checkFields()) {
+        alert("Please complete the form")
+      } else {
+        var data = { 'cravings': [] }
+        localStorage.setItem("name", name)
+        localStorage.setItem("child-name", child_name)
+        localStorage.setItem("quit-date", quit_date)
+        localStorage.setItem("cigarettes", cigarettes)
+        localStorage.setItem("cigarettes_price", cigarettes_price)
+        localStorage.setItem("join-date", new Date());
+        localStorage.setItem("data", JSON.stringify(data))
+
+        addSampleData()
+
+        location.href = 'home.html'
+      }
+    }
+
+
+    /* This function gets the current date. Therefore, if a user makes an account,
+       he or she will not be able to select a future date for describing past events. */
+    if (dataExists())
+      location.href = 'home.html'
+
+    function getTodayDate(x) {
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth() + 1;
+      var yyyy = today.getFullYear();
+      if (dd < 10)
+        dd = '0' + dd;
+      if (mm < 10)
+        mm = '0' + mm;
+      today = yyyy + '-' + mm + '-' + dd;
+      x.max = today;
+    }
+  </script>
+</body>
+
+</html>

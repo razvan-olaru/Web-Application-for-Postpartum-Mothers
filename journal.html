@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<!-- This is the Journal section of the application.
+It displays a list of notes made by the user. At the
+bottom of the page, there is a "+" marked button, with which
+the user is able to add new notes. An empty note would not
+be added in the list. For removing any elements from the Journal,
+the user must long-press on that specific note. -->
+
+<head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>HCI-Project</title>
+      <link rel="shortcut icon" href="https://material.io/favicon.ico">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+      <link rel="stylesheet" href="bundle-app.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+      <script src="http://localhost:8080/js/long-press-event.js"></script>
+      <link rel="stylesheet" href="scss/style.css">
+</head>
+
+<body id="journal_body" oncopy="return false">
+
+      <header class="mdc-top-app-bar">
+            <div class="mdc-top-app-bar__row">
+                  <section class="mdc-top-app-bar_section mdc-top-app-bar_section--align-start">
+                        <a onclick="window.history.back();" style="color: #000;"
+                              class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</a>
+                        <span class="mdc-top-app-bar__title">Journal</span>
+                  </section>
+                  <section class="mdc-top-app-bar_section mdc-top-app-bar_section--align-end" role="toolbar">
+                        <a href="badge.html" class=" mdc-top-app-bar__action-item" aria-label="Badges"><i id="trophy"
+                                    style="color: #000;" class="fa fa-trophy"></i></a>
+                  </section>
+            </div>
+      </header>
+
+      <div id="list_of_paragraphs">
+            <div class="journal_paragraph" id="first_journal_paragraph">
+                  <div class="paragraph_text" id="first_paragraph">I had a craving yesterday, but I managed to keep
+                        myself busy and not smoke am proud of myself</div>
+            </div>
+
+            <div class="journal_paragraph">
+                  <div class="paragraph_text">Me and my husband promised together to stop smoking</div>
+            </div>
+
+            <div class="journal_paragraph">
+                  <div class="paragraph_text">Last night I went out with my friends and Berend knew that I stopped
+                        smoking so he didn't start smoking himself while we were in the group</div>
+            </div>
+
+            <div class="journal_paragraph">
+                  <div class="paragraph_text">I had a craving yesterday, but I managed to keep myself busy and not smoke
+                        am proud of myself</div>
+            </div>
+
+            <div class="journal_paragraph">
+                  <div class="paragraph_text">Me and my husband promised together to stop smoking</div>
+            </div>
+
+            <div class="journal_paragraph">
+                  <div class="paragraph_text">Last night I went out with my friends and Berend knew that I stopped
+                        smoking so he didn't start smoking himself while we were in the group</div>
+            </div>
+
+            <div class="journal_paragraph">
+                  <div class="paragraph_text">I had a craving yesterday, but I managed to keep myself busy and not smoke
+                        am proud of myself</div>
+            </div>
+
+            <div class="journal_paragraph">
+                  <div class="paragraph_text">Me and my husband promised together to stop smoking</div>
+            </div>
+
+            <div class="journal_paragraph" data-long-press-delay="100">
+                  <div class="paragraph_text">Last night I went out with my friends and Berend knew that I stopped
+                        smoking so he didn't start smoking himself while we were in the group</div>
+            </div>
+
+      </div>
+
+      <button class="add_paragraph" onclick="checkButtonFunctionality()">+</button>
+
+      <!-- Input form that appears when pressing plus: -->
+      <center>
+            <div class="containerr" id="form-field" style="display: none;">
+                  <div id="comments" class="form-group">
+                        <div class="field__input-containerr">
+                              <input type="text" class="field__input" id="input-first-name" name="input-first-name"
+                                    required value="" autocomplete="off" required>
+                              <label class="field__label" id="username-label" for="input-first-name"><span>Add
+                                          note:</span></label>
+                              <div class="field__decoration"></div>
+                        </div>
+                  </div>
+            </div>
+      </center>
+
+      <!-- Popup message: -->
+      <div class="cd-popup" role="alert">
+            <div class="cd-popup-container">
+                  <p>Are you sure you want to delete this element?</p>
+                  <ul class="cd-buttons">
+                        <li class="yes"><a href="#0">Yes</a></li>
+                        <li class="no"><a href="#0">No</a></li>
+                  </ul>
+                  <a href="#0" class="cd-popup-close img-replace">Close</a>
+            </div>
+      </div>
+
+      <script>
+            var button = document.getElementsByClassName("add_paragraph");
+            count = 0;
+            var new_field;
+            var buttonWasUsed = false;
+            localStorage.setItem("button-was-used", buttonWasUsed);
+
+            /* This function checks whether the button was pushed to create
+               a new empty note which will further be completed by the user,
+               or to post the already written note. */
+            function checkButtonFunctionality() {
+                  count += 1;
+                  if (count % 2 == 1) {
+                        new_field = displayInputForm();
+                  }
+                  else {
+                        createParagraph(new_field);
+                        buttonWasUsed = true;
+                        localStorage.setItem("button-was-used", buttonWasUsed);
+                  }
+                  window.scrollBy(0, $(document).height());
+            };
+
+            // When needed, create a new note (a new input form)
+            function displayInputForm() {
+                  var new_field = document.getElementById('form-field');
+                  document.getElementById('input-first-name').value = "";
+                  new_field.style.display = "block";
+
+                  var paragraph_list = document.getElementById("list_of_paragraphs");
+                  paragraph_list.appendChild(new_field);
+                  return new_field;
+            }
+
+            /* When needed, get the user's input and upload the
+               note into the Journal. */
+            function createParagraph(new_field) {
+                  if (document.getElementById("input-first-name").value != "") {
+                        input = document.createTextNode(document.getElementById("input-first-name").value);  //text node
+                        var text = document.createElement("div");
+                        text.setAttribute('class', 'paragraph_text');
+
+                        var new_paragraph = document.createElement("div");  //create paragraph element
+                        new_paragraph.setAttribute('class', 'journal_paragraph');
+                        new_field.style.display = "none";
+                        text.appendChild(input);
+                        new_paragraph.appendChild(text);
+
+                        document.getElementById("list_of_paragraphs").appendChild(new_paragraph);
+                  }
+                  else {
+                        alert("You cannot add an empty paragraph");
+                        new_field.style.display = "none";
+                  }
+                  reloadJs("js/main.js");
+            }
+
+            /* This function reloads the main.js file,
+               in order to apply the long-press functionalities on
+               freshly created notes. */
+            function reloadJs(src) {
+                  src = $('script[src$="' + src + '"]').attr("src");
+                  $('script[src$="' + src + '"]').remove();
+                  $('<script/>').attr('src', src).appendTo('head');
+            }
+      </script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<!-- In this page of the application, the user is able to add
+information regarding a craving episode, called chips. They
+describe feelings, activities, and possible people that
+could be around the user. The data will then
+be used in the Cravings Graphs.-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HCI-Project</title>
+  <link rel="shortcut icon" href="https://material.io/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" href="bundle-app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar_section mdc-top-app-bar_section--align-start">
+        <a onclick="window.history.back();" style="color: #000;"
+          class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</a>
+        <span class="mdc-top-app-bar__title">Health Timeline</span>
+      </section>
+      <section class="mdc-top-app-bar_section mdc-top-app-bar_section--align-end" role="toolbar">
+        <a href="badge.html" class=" mdc-top-app-bar__action-item" aria-label="Badges"><i id="trophy"
+            style="color: #000;" class="fa fa-trophy"></i></a>
+      </section>
+    </div>
+  </header>
+
+
+  <center>
+    <h3 class="questions" id="push_down">How strong was your desire to smoke?</h3>
+  </center>
+
+  <div class="container">
+
+    <div class="range-slider">
+      <input id="rs-range-line" class="rs-range" type="range" value="1" min="1" max="10">
+    </div>
+
+    <div class="box-minmax">
+      <span class="custom">Poor</span><span class="custom">Aaargh!</span>
+    </div>
+
+  </div>
+
+  <center>
+    <h3 class="questions">How are you feeling?</h3>
+    <div id="feels" class="md-chips">
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        annoyed
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        anxious
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        down
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        lonely
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        bored
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        happy
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        stressed
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        hungry
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        frustrated
+      </div>
+    </div>
+  </center>
+
+  <center>
+    <h3 class="questions">What are you doing?</h3>
+  </center>
+
+  <center>
+    <div id="activity" class="md-chips">
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        drinking
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        watching TV
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        driving
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        waiting for the bus
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        relaxing
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        thinking
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        working
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        just had sex
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        at event/bar
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        coffee/tea
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        chatting
+      </div>
+    </div>
+  </center>
+
+  <center>
+    <h3 class="questions">Who are you with?</h3>
+    <div id="company" class="md-chips">
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        alone
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        family
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        friends
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        partner
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        smokers
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        strangers
+      </div>
+      <div class="md-chip md-chip-clickable" onclick="firstClick(this)">
+        colleagues
+      </div>
+    </div>
+  </center>
+
+  <center>
+    <div class="containerr">
+      <div id="comments" class="form-group">
+        <div class="field__input-containerr">
+          <input type="text" class="field__input" id="input-comment" name="input-comment" required value=""
+            autocomplete="off">
+          <label class="field__label" id="comment-label" for="input-comment"><span>Any comments that you find
+              useful?</span></label>
+          <div class="field__decoration"></div>
+        </div>
+      </div>
+    </div>
+  </center>
+
+  <button class="addcraving" onclick="addCraving()">Add Craving</button>
+
+  <script>
+
+    function firstClick(x) {
+      x.classList.toggle('md-chip-active')
+    }
+
+    // This function returns the chips which were selected by the users
+    function getChips(parent) {
+      var parentArray = []
+      for (var i = 0; i < parent.length; i++) {
+        if (parent[i].classList.contains("md-chip-active"))
+          parentArray.push(parent[i].textContent.trim())
+      }
+      return parentArray;
+    }
+
+    /* addCraving will gather all information about the new craving episode,
+       in order for the data to be stored in the Cravings Graph */
+    function addCraving() {
+      var date = new Date()
+      var intensity = document.getElementById("rs-range-line").value
+      var feels = getChips(document.getElementById("feels").children)
+      var activities = getChips(document.getElementById("activity").children)
+      var company = getChips(document.getElementById("company").children)
+      var comment = document.getElementById("input-comment").value
+
+      var newCrave = {
+        'date': date,
+        'intensity': intensity,
+        'feel': feels,
+        'activity': activities,
+        'company': company,
+        'comment': comment
+      }
+      cravings = JSON.parse(localStorage.getItem("data"))
+      cravings['cravings'].push(newCrave)
+      localStorage.setItem("data", JSON.stringify(cravings))
+
+      location.href = 'health.html'
+    }
+  </script>
+
+  <script src="bundle-app.js" async></script>
+</body>
+
+</html>

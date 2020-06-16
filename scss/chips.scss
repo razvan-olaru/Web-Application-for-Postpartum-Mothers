@@ -1,0 +1,161 @@
+/* This scss deals with designing the chips
+   used in the Health Timeline section */
+
+   $md-chip-height: 32px;
+   $md-chip-color: #e0e0e0;
+   
+   .md-chip {
+     display: inline-block;
+     background: $md-chip-color;
+     padding: 0 8px;
+     border-radius: 32px;
+     font-size: 13px;
+     &.md-chip-hover:hover {
+       background: #ccc;
+     }
+   }
+   
+   .md-chip-clickable {
+     //    transition: all 0s 9999999s;
+     &.md-chip-clickable:focus {
+       transition: all 0s;
+       background-color: #006d8f;
+     }
+   }
+   
+   .md-chip {
+     height: $md-chip-height;
+     line-height: $md-chip-height;
+   }
+   
+   .md-chips {
+     margin-top: 10px;
+   }
+   
+   .md-chips .md-chip {
+     background-color: #e0e0e0;
+     margin: 0 5px 3px 0;
+     transition: all 0.3s ease;
+   }
+   
+   .md-chip-active {
+     background-color: rgb(0, 109, 143) !important;
+     color: #ffffff;
+     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+   }
+   
+   *,
+   *:before,
+   *:after {
+     box-sizing: border-box;
+   }
+   
+   body {
+     position: absolute;
+     width: 100%;
+     padding: 0;
+     margin: 0;
+     font-family: "Roboto", sans-serif;
+     color: #333;
+   }
+   
+   .questions {
+     margin-top: 30px;
+   }
+   .questionsfirst {
+     margin-top: 10px;
+   }
+   
+   #comments {
+     margin-top: 20px;
+     width: 100%;
+   }
+   
+   #push_down{
+     margin-top: 100px;
+   }
+   
+   .crave-button {
+     position: absolute;
+     margin-right: 25%;
+     margin-left: 25%;
+     bottom: 0;
+     margin-bottom: 40px;
+     display: inline-block;
+     border-radius: 18px;
+     background-color: #007da3;
+     border: none;
+     color: #ffffff;
+     text-align: center;
+     font-size: 20px;
+     padding: 8px;
+     width: 50%;
+     transition: all 0.5s;
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+     outline: none;
+   }
+   
+   .addcraving {
+     margin-right: 25%;
+     margin-left: 25%;
+     bottom: 0;
+     margin-bottom: 40px;
+     display: inline-block;
+     border-radius: 18px;
+     background-color: #007da3;
+     border: none;
+     color: #ffffff;
+     text-align: center;
+     font-size: 20px;
+     padding: 8px;
+     width: 50%;
+     transition: all 0.5s;
+     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+     outline: none;
+   }
+   
+   .addcraving:hover {
+     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+   }
+   
+   #centercom {
+     text-align: center;
+   }
+   
+   #backimg {
+     height: 30px;
+     width: 30px;
+   }
+   
+   ul {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     overflow: hidden;
+     background-color: #bcbcbc;
+   }
+   
+   li {
+     float: left;
+   }
+   
+   li a {
+     display: block;
+     color: black;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+   }
+   
+   #trophy {
+     position: absolute;
+     top: 18px;
+     right: 16px;
+     font-size: 18px;
+   }
+   
+   @media only screen and (max-width: 600px){
+     #push_down{
+       margin-top: 80px;
+     }
+   }

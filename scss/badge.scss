@@ -1,0 +1,121 @@
+/* This is the scss file for the app's 
+   Badges section, precisely for the badge.html file. */
+
+   body { 
+    margin: 0;
+    font-family: 'Roboto';
+  }
+  
+  #title {
+    float: center;
+    color: white;
+    text-align: middle;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 20px; 
+    line-height: 25px;
+    border-radius: 10px;
+  }
+  
+  #home_page{
+    margin-top: -70px;
+    vertical-align: top;
+    text-align: left;
+    border: none;
+    padding: 0;
+    background: none;
+    color: white;
+  }
+  
+  .badges{
+    width: 100%;
+    text-align: center;
+    margin-top: 90px;
+  }
+  
+  .block {
+    display: inline;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+  }
+  
+  .block .popup {
+    visibility: hidden;
+    width: 320px;
+    height: 320px;
+    background-color: white;
+    color: black;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    border: 2px solid black;
+    border-radius: 8px;
+  }
+  
+  .popup{
+    text-align: center;
+    display: block;
+  }
+  
+  .block .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    margin-left: 45%;
+  }
+  .textMargin {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .popupimg {
+  width: 70%;
+  position: relative;
+  }
+  #myBar {
+    background-color: #006d8f; 
+    color: white;
+  }
+  #progbartext{
+    margin-bottom: 5px;
+  }
+  @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+  }
+  
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+  }
+  
+  @media only screen and (max-width: 600px){
+    .block .show {
+      margin-left: 20%;
+    }
+  
+    .popupimg {
+      width: 70%;
+      position: relative;
+      }
+  
+      .block .popup {
+        
+        width: 250px;
+        height: 275px;
+      
+      }
+  }
+  
+  @media only screen and (min-width: 601px){
+    .block .show {
+      margin-left: 42%;
+    }
+  }

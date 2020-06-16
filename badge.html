@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+
+<!-- This is the Badges page, which displays
+a number of icons that can be unlocked when the user
+achieves something specific. -->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HCI-Project</title>
+  <link rel="shortcut icon" href="https://material.io/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" href="bundle-app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+<body style="text-align:center">
+  <header class="mdc-top-app-bar">
+    <div class="mdc-top-app-bar__row">
+      <section class="mdc-top-app-bar_section mdc-top-app-bar_section--align-start">
+        <a onclick="window.history.back();" style="color: #000;"
+          class="material-icons mdc-top-app-bar__navigation-icon">arrow_back</a>
+        <span class="mdc-top-app-bar__title">Badges</span>
+      </section>
+    </div>
+  </header>
+
+  <div class="badges">
+    <div class="block" id="p1" style="filter: grayscale(100%);">
+      <img src="res/badge1.png" onclick="popupFunction(1)">
+      <span onclick="popupFunction(1)" class="popup" id="popup1"><img class="popupimg" src="res/badge1.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! You just saved your first 10 euros!</p>
+      </span>
+    </div>
+    <div class="block" id="p2" style="filter: grayscale(100%);">
+      <img src="res/badge2.png" onclick="popupFunction(2)">
+      <span onclick="popupFunction(2)" class="popup" id="popup2"><img class="popupimg" src="res/badge2.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! You just saved your first 100 euros!</p>
+      </span>
+    </div>
+    <div class="block" id="p3" style="filter: grayscale(100%);">
+      <img src="res/badge3.png" onclick="popupFunction(3)">
+      <span onclick="popupFunction(3)" class="popup" id="popup3"><img class="popupimg" src="res/badge3.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! You just saved your first 500 euros!</p>
+      </span>
+    </div>
+    <div class="block" id="p4" style="filter: grayscale(100%);">
+      <img src="res/badge4.png" onclick="popupFunction(4)">
+      <span onclick="popupFunction(4)" class="popup" id="popup4"><img class="popupimg" src="res/badge4.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! You just saved your first 2500 euros!</p>
+      </span>
+    </div>
+    <div class="block" id="p5" style="filter: grayscale(100%);">
+      <img src="res/badge5.png" onclick="popupFunction(5)">
+      <span onclick="popupFunction(5)" class="popup" id="popup5"><img class="popupimg" src="res/badge5.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! You just saved your first 5000 euros!</p>
+      </span>
+    </div>
+    <div class="block" id="p6" style="filter: grayscale(100%);">
+      <img src="res/badge6.png" onclick="popupFunction(6)">
+      <span onclick="popupFunction(6)" class="popup" id="popup6"><img class="popupimg" src="res/badge6.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! 1 week since you join !</p>
+      </span>
+    </div>
+    <div class="block" id="p7" style="filter: grayscale(100%);">
+      <img src="res/badge7.png" onclick="popupFunction(7)">
+      <span onclick="popupFunction(7)" class="popup" id="popup7"><img class="popupimg" src="res/badge7.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! 1 month since you join!</p>
+      </span>
+    </div>
+    <div class="block" id="p8" style="filter: grayscale(100%);">
+      <img src="res/badge8.png" onclick="popupFunction(8)">
+      <span onclick="popupFunction(8)" class="popup" id="popup8"><img class="popupimg" src="res/badge8.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! 6 months since you join!</p>
+      </span>
+    </div>
+    <div class="block" id="p9" style="filter: grayscale(100%);">
+      <img src="res/badge9.png" onclick="popupFunction(9)">
+      <span onclick="popupFunction(9)" class="popup" id="popup9"><img class="popupimg" src="res/badge9.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! 1 year since you join!</p>
+      </span>
+    </div>
+    <div class="block" id="p10" style="filter: grayscale(100%);">
+      <img src="res/badge10.png" onclick="popupFunction(10)">
+      <span onclick="popupFunction(10)" class="popup" id="popup10"><img class="popupimg" src="res/badge10.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! Your coughs should have improved by now!</p>
+      </span>
+    </div>
+    <div class="block" id="p11" style="filter: grayscale(100%);">
+      <img src="res/badge11.png" onclick="popupFunction(11)">
+      <span onclick="popupFunction(11)" class="popup" id="popup11"><img class="popupimg" src="res/badge11.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! Your risk of heart disease should be about
+          half compared to a smoker's!</p>
+      </span>
+    </div>
+    <div class="block" id="p12" style="filter: grayscale(100%);">
+      <img src="res/badge12.png" onclick="popupFunction(12)">
+      <span onclick="popupFunction(12)" class="popup" id="popup12"><img class="popupimg" src="res/badge12.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! Your risk of lung cancer should be about half
+          compared to a smoker's!</p>
+      </span>
+    </div>
+    <div class="block" id="p13" style="filter: grayscale(100%);">
+      <img src="res/badge13.png" onclick="popupFunction(13)">
+      <span onclick="popupFunction(13)" class="popup" id="popup13"><img class="popupimg" src="res/badge13.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! Your risk of heart attack should be about the
+          same as someone who never smoked!</p>
+      </span>
+    </div>
+    <div class="block" id="p14" style="filter: grayscale(100%);">
+      <img src="res/badge14.png" onclick="popupFunction(14)">
+      <span onclick="popupFunction(14)" class="popup" id="popup14"><img class="popupimg" src="res/badge14.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! Your baby <span class="babyName"></span> is
+          breathing clean air for more than 1 year!</p>
+      </span>
+    </div>
+    <div class="block" id="p15" style="filter: grayscale(100%);">
+      <img src="res/badge15.png" onclick="popupFunction(15)">
+      <span onclick="popupFunction(15)" class="popup" id="popup15"><img class="popupimg" src="res/badge15.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! Your baby <span class="babyName"></span> is
+          breathing clean air for more than 3 years!</p>
+      </span>
+    </div>
+    <div class="block" id="p16" style="filter: grayscale(100%);">
+      <img src="res/badge16.png" onclick="popupFunction(16)">
+      <span onclick="popupFunction(16)" class="popup" id="popup16"><img class="popupimg" src="res/badge16.png">
+        <p class="textMargin">Congratulations, <span class="name"></span>! You added your first comment in Journal!</p>
+      </span>
+    </div>
+  </div>
+  <br><br>
+
+  <div class="w3-container">
+    <p id="progbartext" align="left">Badges Achieved</p>
+    <div class="w3-light-grey w3-round-xlarge">
+
+      <div id="myBar" class="w3-container w3-round-xlarge" style="width:25%">25%</div>
+    </div>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    // It shows/hides icons' popups
+    function popupFunction(x) {
+      var id = "popup" + x;
+      var popup = document.getElementById(id);
+      popup.classList.toggle("show");
+    }
+
+
+
+    //Money Badges................................................................//
+
+    var totalBadges = 16;
+    var nrOfBadges = 0;
+    var one_day = 1000 * 60 * 60 * 24;
+    var cigPerDay = localStorage.getItem("cigarettes");
+    var price = localStorage.getItem("cigarettes_price");
+    var input = localStorage.getItem("quit-date");
+    var pricePerDay = localStorage.getItem("pricePerDay");
+    var packetPerDay = cigPerDay / 20;
+    var pricePerDay = packetPerDay * price;
+    var quitDate = new Date(input);
+    var quitDate_ms = quitDate.getTime();
+    var today = new Date();
+    var today_ms = today.getTime();
+    var daysPassed = ((today_ms - quitDate_ms) / one_day);
+    if ((daysPassed * pricePerDay) >= 10 && (daysPassed * pricePerDay) < 100) {
+      var p1 = document.getElementById('p1');
+      p1.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    else if ((daysPassed * pricePerDay) >= 100 && (daysPassed * pricePerDay) < 500) {
+      var p2 = document.getElementById('p2');
+      var p1 = document.getElementById('p1');
+      p2.style.removeProperty("filter");
+      nrOfBadges++;
+      p1.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    else if ((daysPassed * pricePerDay) >= 500 && (daysPassed * pricePerDay) < 2500) {
+      var p3 = document.getElementById('p3');
+      var p2 = document.getElementById('p2');
+      var p1 = document.getElementById('p1');
+      p3.style.removeProperty("filter");
+      nrOfBadges++;
+      p2.style.removeProperty("filter");
+      nrOfBadges++;
+      p1.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    else if ((daysPassed * pricePerDay) >= 2500 && (daysPassed * pricePerDay) < 5000) {
+      var p4 = document.getElementById('p4');
+      var p3 = document.getElementById('p3');
+      var p2 = document.getElementById('p2');
+      var p1 = document.getElementById('p1');
+      p4.style.removeProperty("filter");
+      nrOfBadges++;
+      p3.style.removeProperty("filter");
+      nrOfBadges++;
+      p2.style.removeProperty("filter");
+      nrOfBadges++;
+      p1.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    else if ((daysPassed * pricePerDay) >= 5000) {
+      var p5 = document.getElementById('p5');
+      var p4 = document.getElementById('p4');
+      var p3 = document.getElementById('p3');
+      var p2 = document.getElementById('p2');
+      var p1 = document.getElementById('p1');
+      p5.style.removeProperty("filter");
+      nrOfBadges++;
+      p4.style.removeProperty("filter");
+      nrOfBadges++;
+      p3.style.removeProperty("filter");
+      nrOfBadges++;
+      p2.style.removeProperty("filter");
+      nrOfBadges++;
+      p1.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    //.................................................................................//
+
+
+    //Old account badges............................................................//
+
+    var inputDate = localStorage.getItem("join-date");
+    var accountTime = new Date(inputDate);
+    var accountTime_ms = accountTime.getTime();
+    var daysPassedsinceCreation = ((today_ms - accountTime_ms) / one_day);
+    if (daysPassedsinceCreation >= 7 && daysPassedsinceCreation < 31) {
+      alert("1 week of using the app");
+      nrOfBadges++;
+    }
+    else if (daysPassedsinceCreation >= 31 && daysPassedsinceCreation < 180) {
+      alert("1 month of using the app");
+      nrOfBadges++;
+    }
+    else if (daysPassedsinceCreation >= 180 && daysPassedsinceCreation < 360) {
+      alert("6 months of using the app");
+      nrOfBadges++;
+    }
+    else if (daysPassedsinceCreation >= 360) {
+      alert("More than 1 year of using the app");
+      nrOfBadges++;
+    }
+    //..................................................................................//
+
+    //Health Badges...................................................................//
+    if (daysPassed >= 150 && daysPassed < 365) {
+      var p10 = document.getElementById('p10');
+      p10.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    else if (daysPassed >= 365 && daysPassed < 1095) {
+      var p10 = document.getElementById('p10');
+      var p11 = document.getElementById('p11');
+      var p14 = document.getElementById('p14');
+      p10.style.removeProperty("filter");
+      nrOfBadges++;
+      p11.style.removeProperty("filter");
+      nrOfBadges++;
+      p14.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    else if (daysPassed >= 1095 && daysPassed < 3650) {
+      var p10 = document.getElementById('p10');
+      var p11 = document.getElementById('p11');
+      var p14 = document.getElementById('p14');
+      var p15 = document.getElementById('p15');
+      p10.style.removeProperty("filter");
+      nrOfBadges++;
+      p11.style.removeProperty("filter");
+      nrOfBadges++;
+      p14.style.removeProperty("filter");
+      nrOfBadges++;
+      p15.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    else if (daysPassed >= 3650 && daysPassed < 5475) {
+      var p10 = document.getElementById('p10');
+      var p11 = document.getElementById('p11');
+      var p12 = document.getElementById('p12');
+      var p14 = document.getElementById('p14');
+      var p15 = document.getElementById('p15');
+      p10.style.removeProperty("filter");
+      nrOfBadges++;
+      p11.style.removeProperty("filter");
+      nrOfBadges++;
+      p12.style.removeProperty("filter");
+      nrOfBadges++;
+      p14.style.removeProperty("filter");
+      nrOfBadges++;
+      p15.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    else if (daysPassed >= 5475) {
+      var p10 = document.getElementById('p10');
+      var p11 = document.getElementById('p11');
+      var p12 = document.getElementById('p12');
+      var p13 = document.getElementById('p13');
+      var p14 = document.getElementById('p14');
+      var p15 = document.getElementById('p15');
+      p10.style.removeProperty("filter");
+      nrOfBadges++;
+      p11.style.removeProperty("filter");
+      nrOfBadges++;
+      p12.style.removeProperty("filter");
+      nrOfBadges++;
+      p13.style.removeProperty("filter");
+      nrOfBadges++;
+      p14.style.removeProperty("filter");
+      nrOfBadges++;
+      p15.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+    //...................................................................................//
+
+    //Journal Badges.....................................................................//
+    if (localStorage.getItem("button-was-used") == "true") {
+      var p16 = document.getElementById('p16');
+      p16.style.removeProperty("filter");
+      nrOfBadges++;
+    }
+
+
+    //...................................................................................//
+
+
+    var elem = document.getElementById("myBar");
+    var width = Math.round((nrOfBadges * 100) / totalBadges);
+    elem.style.width = width + '%';
+    elem.innerHTML = width * 1 + '%';
+
+    var list = document.getElementsByClassName("block");
+    for (var i = 0; i < list.length; i++) {
+      if (list[i].style.filter === 'grayscale(100%)') {
+        list[i].style.pointerEvents = "none";
+      }
+    }
+
+    var badgeList = document.getElementsByClassName("name");
+
+    for (var i = 0; i < badgeList.length; i++) {
+      badgeList[i].innerHTML = localStorage.getItem("name");
+    }
+
+    var babyBadges = document.getElementsByClassName("babyName");
+    for (var i = 0; i < babyBadges.length; i++) {
+      babyBadges[i].innerHTML = localStorage.getItem("child-name");
+    }
+  </script>
+
+</body>
+
+</html>

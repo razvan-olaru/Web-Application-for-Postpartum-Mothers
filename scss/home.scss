@@ -1,0 +1,143 @@
+/* This is the scss file for the app's home page,
+   precisely for the home.html file. */
+   
+   #trophy {
+    position: absolute;
+    top: 18px;
+    right: 16px;
+    font-size: 18px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+    #image_paragraph {
+      box-shadow: 2px 2px 1px #c2bbbb;
+      text-align: center;
+      position: relative;
+    }
+  
+    #background {
+      width: 100%;
+      height: auto;
+      -webkit-filter: blur(9px);
+      filter: blur(9px);
+    }
+    #background_text {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 25px;
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (min-width: 601px) {
+    #image_paragraph {
+      box-shadow: 2px 2px 1px #c2bbbb;
+      text-align: center;
+      position: relative;
+    }
+  
+    #background {
+      width: 100%;
+      height: 250px;
+      -webkit-filter: blur(9px);
+      filter: blur(9px);
+    }
+    #background_text {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 25px;
+      width: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .home_page_button {
+      position: relative;
+      width: 35%;
+      padding-top: 19.5%;
+      padding-bottom: 10.5%;
+      border-radius: 6px;
+      border: none;
+      transition: all 0.5s;
+      background-color: #007da3;
+    }
+  
+    #button1 {
+      margin-top: 65px;
+      margin-left: 14%;
+    }
+    #button2 {
+      margin-top: 65px;
+    }
+    #button3 {
+      margin-top: 5px;
+      margin-left: 14%;
+    }
+    #button4 {
+      margin-top: 5px;
+    }
+  
+    .forward_to_next_page {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 16.5px;
+      width: 100%;
+    }
+    .home_page_button:hover {
+      box-shadow: 0px 4px 7px #9e9e9e;
+      width: 36%;
+      padding-top: 20.5%;
+      padding-bottom: 11.5%;
+      transition: all 0.5s;
+      background-color: #006d8f;
+    }
+  }
+  
+  @media only screen and (min-width: 601px) {
+    .home_page_button {
+      position: relative;
+      width: 20%;
+      padding-top: 7.5%;
+      padding-bottom: 7.5%;
+      border-radius: 6px;
+      border: none;
+      transition: all 0.5s;
+      margin-top: 75px;
+      background-color: #007da3;
+    }
+  
+    #button1 {
+      margin-left: 8%;
+    }
+  
+    .forward_to_next_page {
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 18px;
+      width: 100%;
+    }
+    .home_page_button:hover {
+      box-shadow: 0px 4px 7px #9e9e9e;
+      width: 20.5%;
+      padding-top: 7.75%;
+      padding-bottom: 7.75%;
+      transition: all 0.5s;
+      background-color: #006d8f;
+    }
+  }

@@ -1,0 +1,81 @@
+/* This is the scss file for the app's 
+   Information and Tips section,
+   precisely for the info.html file. */
+
+   body{ 
+    margin: 0;
+    font-family: 'Roboto';
+  }
+  
+  .info{
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 2%;
+    margin-top: 2%;
+  
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -7px #222;
+  }
+  
+  .list_element{
+    margin-bottom: 3px;
+    font-family: sans-serif;
+    padding-bottom:0.5%;
+  }
+  
+  #info {
+      position: relative;
+      top: 15px;
+      line-height: 1.6;
+  }
+  
+  .topic { 
+      position: relative;
+      text-align: center;
+      top: 28px;
+  }
+  
+  i.baby {
+    font-size: 22px;
+    display: inline-block;
+    animation: spin 1.5s linear forwards;
+  }
+  
+  #push{
+    margin-top: 70px;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(35deg);
+    }
+  }
+  
+  @media only screen and (max-width: 600px){
+    .info{
+      font-size: 20px; 
+      margin-right: 10px;
+    }
+    #push{
+      margin-top: 50px;
+    }
+    
+  }
+  
+  @media only screen and (min-width: 601px){
+    .info{
+      font-size: 30px;
+      margin-left: 20px;
+      line-height: 1.6;
+    }
+  
+    .topic{
+      font-size: 32px;
+      margin-left: 15px;
+    }
+  
+    .list_element{
+      padding-left: 20px;
+    }
+  }

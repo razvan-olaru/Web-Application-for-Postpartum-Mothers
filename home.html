@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<!-- This is the main page of the application.
+It displays a background picture, having on top a paragraph that shows the 
+number of days the user has since quitting. Beneath that, there
+are 4 buttons displaying the app's 4 main features.-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HCI-Project</title>
+  <link rel="shortcut icon" href="https://material.io/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+  <link rel="stylesheet" href="bundle-app.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+
+<body>
+  <p>
+    <h3 id="addName" align="center" style="margin-top:0px"></h3>
+
+    <a href="badge.html" style="color: black; text-decoration: none;"><i id="trophy" class="fa fa-trophy"></i></a>
+
+    <div id="image_paragraph">
+      <img id="background" src="res/background.jpeg" alt="Pastel-background">
+      <div id="background_text"></div>
+    </div>
+  </p>
+
+  <p>
+    <a href="info.html"><button id="button1" class="home_page_button" style="vertical-align:middle"><span
+          class="forward_to_next_page">Information and Tips</span></button></a>
+    <a href="health.html"><button id="button2" class="home_page_button" style="vertical-align:middle"><span
+          class="forward_to_next_page">Health Timeline</span></button></a>
+    <a href="timer.html"><button id="button3" class="home_page_button" style="vertical-align:middle"><span
+          class="forward_to_next_page">Stress Timer</span></button></a>
+    <a href="journal.html"><button id="button4" class="home_page_button" style="vertical-align:middle"><span
+          class="forward_to_next_page">Journal</span></button></a>
+  </p>
+
+
+  <script>
+    var paragraph = document.getElementById("addName");
+    paragraph.textContent += localStorage.getItem("name");
+    var days = document.getElementById("background_text");
+    var one_day = 1000 * 60 * 60 * 24;
+    days.textContent += Math.round(transformDate(localStorage.getItem("quit-date")) / one_day) + " smoke-free days so far! ";
+
+    /* This function calculates the time period since
+       the user quit smoking, up until today */
+    function transformDate(inputDate) {
+      var one_day = 1000 * 60 * 60 * 24;
+      var test = new Date(inputDate);
+      var today = new Date();
+      var ipdate_ms = test.getTime();
+      var today_ms = today.getTime();
+      var difference_ms = today_ms - ipdate_ms;
+      return difference_ms
+    }
+  </script>
+</body>
+
+</html>

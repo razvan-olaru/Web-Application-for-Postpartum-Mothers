@@ -1,0 +1,9 @@
+node_modules
+.vscode
+dist/
+
+health\.html
+
+timer\.html
+
+package\.json

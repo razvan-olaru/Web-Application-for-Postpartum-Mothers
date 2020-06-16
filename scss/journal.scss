@@ -1,0 +1,99 @@
+/* This is the scss file for the app's 
+   Journal section, precisely for the
+   journal.html file. */
+
+   #list_of_paragraphs{
+    margin-top: 97px;
+}
+
+#journal_body{
+    background-color: #f3f2f2;
+}
+
+.journal_paragraph{
+    background-color: white;
+    box-shadow: 1.5px 1.5px 3px #c2bbbb;
+    width: 100%;
+}
+.paragraph_text{
+    font-family: sans-serif;
+}
+
+.add_paragraph {
+    position: fixed;
+
+    border-radius: 50%;
+    background-color: #007da3;
+    border: none;
+    color: #ffffff;
+    text-align: center;
+    font-size: 40px;
+    padding: 8px;
+    transition: all 0.5s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    outline: none;
+    bottom: 5%;
+    width: 60px;
+  }
+
+
+@media only screen and (max-width: 600px){
+    #first_paragraph{
+        margin-top: 6%;
+    }
+    .journal_paragraph{
+        margin-bottom: 6%;
+    }
+    .paragraph_text{
+        margin-left: 5%;
+        margin-right: 5%;
+        padding-top: 3%;
+        padding-bottom: 3%;
+    }
+    .add_paragraph{
+        right: 7.5%;
+    }
+    #list_of_paragraphs{
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (min-width: 601px){
+    #first_paragraph{
+        margin-top: 2%;
+    }
+    .journal_paragraph{
+        margin-bottom: 2%;
+    }
+    .paragraph_text{
+        margin-left: 3%;
+        margin-right: 3%;
+        padding-top: 2%;
+        padding-bottom: 2%;
+    }
+    .add_paragraph{
+        right: 3%;
+    }
+}
+
+.cd-popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  }
+  
+  .cd-popup.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s 0s, visibility 0s 0s;
+  }
+  
+  .cd-popup-container {
+    transform: translateY(-40px);
+    transition-property: transform;
+    transition-duration: 0.3s;
+  }
+  
+  .is-visible .cd-popup-container {
+    transform: translateY(0);
+  }
